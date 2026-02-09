@@ -1,7 +1,7 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
--- Save current file 
-vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc = 'Save'})
+-- Save current file
+vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", { desc = "Save" })
 
 -- Move line up/down in normal mode
 vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
@@ -11,10 +11,18 @@ vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
+-- Duplicate lines
+vim.keymap.set("v", "<A-S-Down>", "y'>p", { desc = "Duplicate lines down" })
+vim.keymap.set("v", "<A-S-Up>", "y'<P", { desc = "Duplicate lines up" })
+
+-- Duplicate current line(Normal mode)
+vim.keymap.set("n", "<A-S-Down>", "yyp", { desc = "Duplicate line down" })
+vim.keymap.set("n", "<A-S-Up>", "yyP", { desc = "Duplicate line up" })
+
 -- Toggle Twilight
 vim.keymap.set("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })
 
 -- File tree
-vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Go to left window" })
 vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file tree" })
+vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Go to left window" })
 vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Go to right window" })
